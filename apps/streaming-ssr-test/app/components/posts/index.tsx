@@ -1,13 +1,15 @@
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function fetchPosts() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  await delay(4000);
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    cache: "no-store",
+  });
   return res.json();
 }
 
 export default async function Posts() {
   const posts = await fetchPosts();
-  await delay(4000);
 
   return (
     <div style={{ marginBottom: "20px" }}>
