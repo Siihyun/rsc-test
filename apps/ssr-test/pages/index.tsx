@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import type { Post, Comment, User } from "../../../packages/entities/types";
+import _ from "lodash";
 
 // Define the shape of the props
 interface Props {
@@ -17,6 +18,7 @@ const Home = ({ data }: Props) => {
   const postsToShow = data?.data1.slice(0, ITEMS_TO_SHOW) || [];
   const commentsToShow = data?.data2.slice(0, ITEMS_TO_SHOW) || [];
   const usersToShow = data?.data3.slice(0, ITEMS_TO_SHOW) || [];
+  const list = _.chunk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2);
 
   return (
     <div style={{ padding: "20px" }}>
@@ -60,6 +62,10 @@ const Home = ({ data }: Props) => {
           {JSON.stringify(usersToShow, null, 2)}
         </pre>
       </div>
+
+      <div>
+        <pre>{JSON.stringify(list, null, 2)}</pre>
+      </div>
     </div>
   );
 };
@@ -84,10 +90,8 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
       data3: results[2] as User[],
     };
 
-    // Simulate delay to make FCP slow
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    // Return the combined data as props
     return {
       props: {
         data: combinedData,

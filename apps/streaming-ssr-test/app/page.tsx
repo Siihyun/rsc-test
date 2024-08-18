@@ -1,3 +1,4 @@
+import Chunk from "@/app/components/chunks";
 import Comments from "@/app/components/comments";
 import Posts from "@/app/components/posts";
 import Users from "@/app/components/users";
@@ -19,6 +20,8 @@ export default function Home() {
       <Suspense fallback={<div>fetching Users..</div>}>
         <Users />
       </Suspense>
+
+      <Chunk />
     </div>
   );
 }
