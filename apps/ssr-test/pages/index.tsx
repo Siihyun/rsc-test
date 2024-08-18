@@ -75,7 +75,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
     const promises = endpoints.map((url) =>
       fetch(url).then((res) => res.json())
     );
-    promises.push(delay(10000));
+    promises.push(delay(6000));
     const results = await Promise.all(promises);
 
     const combinedData = {

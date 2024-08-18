@@ -1,7 +1,7 @@
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function fetchPosts() {
-  await delay(4000);
+  await delay(2000);
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "no-store",
   });
