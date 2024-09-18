@@ -18,6 +18,7 @@ const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const Home = ({ data }: Props) => {
   const { posts, comments, users } = data;
+  console.log(posts.slice(0, 10));
 
   return (
     <div style={{ padding: "20px" }}>

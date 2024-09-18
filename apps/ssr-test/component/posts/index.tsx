@@ -4,7 +4,7 @@ interface Props {
   posts: Post[];
 }
 
-export default async function Posts({ posts }: Props) {
+export default function Posts({ posts }: Props) {
   return (
     <div style={{ marginBottom: "20px" }}>
       <h2 style={{ color: "blue" }}>Posts</h2>

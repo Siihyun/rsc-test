@@ -4,7 +4,7 @@ interface Props {
   comments: Comment[];
 }
 
-export default async function Comments({ comments }: Props) {
+export default function Comments({ comments }: Props) {
   return (
     <div style={{ marginBottom: "20px" }}>
       <h2 style={{ color: "blue" }}>Comments</h2>

@@ -4,7 +4,7 @@ interface Props {
   users: User[];
 }
 
-export default async function Users({ users }: Props) {
+export default function Users({ users }: Props) {
   return (
     <div style={{ marginBottom: "20px" }}>
       <h2 style={{ color: "blue" }}>Users</h2>
