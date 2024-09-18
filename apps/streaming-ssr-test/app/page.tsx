@@ -1,4 +1,3 @@
-import Chunk from "@/app/components/chunks";
 import Comments from "@/app/components/comments";
 import { MarkdownContent } from "@/app/components/markdown";
 import Posts from "@/app/components/posts";
@@ -21,8 +20,6 @@ export default function Home() {
       <Suspense fallback={<div>fetching Users..</div>}>
         <Users />
       </Suspense>
-
-      <Chunk />
 
       <MarkdownContent />
     </div>
