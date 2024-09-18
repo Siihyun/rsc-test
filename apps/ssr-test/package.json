@@ -11,14 +11,17 @@
   "dependencies": {
     "@types/lodash": "^4.17.7",
     "lodash": "^4.17.21",
+    "marked": "^14.1.2",
     "next": "14.2.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sanitize-html": "^2.13.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/sanitize-html": "^2.13.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.1",
     "typescript": "^5"

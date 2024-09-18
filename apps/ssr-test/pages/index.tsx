@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next";
 import type { Post, Comment, User } from "../../../packages/entities/types";
 import _ from "lodash";
+import { MarkdownContent } from "@/component/markdown";
 
 // Define the shape of the props
 interface Props {
@@ -66,6 +67,8 @@ const Home = ({ data }: Props) => {
       <div>
         <pre>{JSON.stringify(list, null, 2)}</pre>
       </div>
+
+      <MarkdownContent />
     </div>
   );
 };
@@ -81,7 +84,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
     const promises = endpoints.map((url) =>
       fetch(url).then((res) => res.json())
     );
-    promises.push(delay(6000));
+    promises.push(delay(4000));
     const results = await Promise.all(promises);
 
     const combinedData = {

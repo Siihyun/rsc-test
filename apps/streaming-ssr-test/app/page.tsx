@@ -1,5 +1,6 @@
 import Chunk from "@/app/components/chunks";
 import Comments from "@/app/components/comments";
+import { MarkdownContent } from "@/app/components/markdown";
 import Posts from "@/app/components/posts";
 import Users from "@/app/components/users";
 import { Suspense } from "react";
@@ -22,6 +23,8 @@ export default function Home() {
       </Suspense>
 
       <Chunk />
+
+      <MarkdownContent />
     </div>
   );
 }
