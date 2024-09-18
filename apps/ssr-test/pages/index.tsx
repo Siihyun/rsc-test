@@ -84,7 +84,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
     const promises = endpoints.map((url) =>
       fetch(url).then((res) => res.json())
     );
-    promises.push(delay(4000));
+    promises.push(delay(2000));
     const results = await Promise.all(promises);
 
     const combinedData = {
@@ -92,8 +92,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
       data2: results[1] as Comment[],
       data3: results[2] as User[],
     };
-
-    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     return {
       props: {
